@@ -20,9 +20,13 @@ The function will also update the inventory_records (For restocking) for a  give
 
     '''
 
+    #Checks to see if it is not day 0 or not divisible by 7
     if current_day != 0 or current_day % 7 != 0:
+        #Calculates the sales for the day
         sales = random.randint(0, 200)  
+        #Subtracts the sales from the available items
         available_items -= sales
+        #Appends the sales levels
         inventory_records.append((current_day, sales, 0, available_items))
 
     return available_items
